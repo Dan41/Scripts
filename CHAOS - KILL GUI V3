@@ -1,6 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Maintenance",
-    Text = "Script temporarily disabled to perform maintenance. Will be activated again (11/13/2023)",
+    Text = "Script temporarily disabled to perform maintenance, It will be activated in a few minutes!",
     Icon = "rbxassetid://15113712049",
-    Duration = 10
+    Duration = 15
 })
