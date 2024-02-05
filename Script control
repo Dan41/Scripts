@@ -1,0 +1,16 @@
+local localPlayer = game.Players.LocalPlayer
+local gui = localPlayer:FindFirstChild("PlayerGui")
+
+if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Update",
+        Text = "COMPATIBLE WITH CHAOS REMASTERED!",
+        Icon = "rbxassetid://15944092143"
+        Duration = 25
+    })
+end
+
+wait(0.5)
+local gui = Instance.new("ScreenGui")
+gui.Name = "NotificadoComSucesso"
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
