@@ -5,7 +5,7 @@ if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Update",
         Text = "COMPATIBLE WITH CHAOS REMASTERED!",
-        Icon = "rbxassetid://15944092143"
+        Icon = "rbxassetid://15944092143",
         Duration = 25
     })
 end
