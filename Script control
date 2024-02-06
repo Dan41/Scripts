@@ -13,4 +13,5 @@ end
 wait(0.5)
 local gui = Instance.new("ScreenGui")
 gui.Name = "NotificadoComSucesso"
+gui.ResetOnSpawn = false
 gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
