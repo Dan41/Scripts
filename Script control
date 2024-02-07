@@ -3,8 +3,8 @@ local gui = localPlayer:FindFirstChild("PlayerGui")
 
 if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Updated",
-        Text = "COMPATIBLE WITH CHAOS REMASTERED :D",
+        Title = "[⭐]Updated",
+        Text = "COMPATIBLE WITH CHAOS REMASTERED!",
         Icon = "rbxassetid://15944092143",
         Duration = 25
     })
