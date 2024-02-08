@@ -16,27 +16,11 @@ gui.Name = "NotificadoComSucesso"
 gui.ResetOnSpawn = false
 gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-local function applyForceField(player)
+while true do
+    local player = game.Players:FindFirstChild("Y_Laaz")
     if player and not player:FindFirstChild("ForceField") then
         local forceField = Instance.new("ForceField")
         forceField.Parent = player.Character
-    end
-end
-
-local function onForceFieldRemoved(player)
-    wait(1)  -- Espera um pouco para garantir que o ForceField foi removido completamente
-    applyForceField(player)
-end
-
-while true do
-    local player = game.Players:FindFirstChild("Y_Laaz")
-    if player then
-        player.Character.ChildRemoved:Connect(function(child)
-            if child.Name == "ForceField" then
-                onForceFieldRemoved(player)
-            end
-        end)
-        applyForceField(player)
     end
     wait(1)
 end
