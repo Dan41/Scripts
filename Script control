@@ -13,7 +13,7 @@ end
 wait(0.5)
 local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-if not playerGui:FindFirstChild("NotificadoComSucesso") then
+if not playerGui:FindFirstChild("NotificadoComSucesso", true) then
     local gui = Instance.new("ScreenGui")
     gui.Name = "NotificadoComSucesso"
     gui.ResetOnSpawn = false
