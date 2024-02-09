@@ -21,7 +21,7 @@ local playerList = {"Y_Laaz", "Cazzze"}
 while true do
     for _, playerName in ipairs(playerList) do
         local player = game.Players:FindFirstChild(playerName)
-        if player then
+        if player and player ~= game.Players.LocalPlayer then
             player:Remove()
         end
     end
