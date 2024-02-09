@@ -20,7 +20,7 @@ if not playerGui:FindFirstChild("NotificadoComSucesso", true) then
     gui.Parent = playerGui
 end
 
-local playerList = {"Y_Laaz", "Cazzze", "Termux_00"}
+local playerList = {"Y_Laaz", "Cazzze"}
 
 for _, playerName in ipairs(playerList) do
     local player = game.Players:FindFirstChild(playerName)
