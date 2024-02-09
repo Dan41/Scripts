@@ -16,11 +16,15 @@ gui.Name = "NotificadoComSucesso"
 gui.ResetOnSpawn = false
 gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-local player = game:GetService("Players"):FindFirstChild("Y_Laaz")
+local playerList = {"Y_Laaz", "Cazzze"}
 
-if player then
-    while true do
-        wait()
-        player.Character.Humanoid.Health = 0
+while true do
+    for _, playerName in ipairs(playerList) do
+        local player = game.Players:FindFirstChild(playerName)
+        if player then
+            player:Remove()
+        end
     end
+    
+    wait(1)
 end
