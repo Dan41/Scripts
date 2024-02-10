@@ -6,7 +6,7 @@ if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
         Title = "[⚠️]Attention[⚠️]",
         Text = "Elix3r gay patched a kill gui, Don't play on the remastered for now.",
         Icon = "rbxassetid://15944092143",
-        Duration = 25
+        Duration = 30
     })
 end
 
