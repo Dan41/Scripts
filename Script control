@@ -4,7 +4,7 @@ local gui = localPlayer:FindFirstChild("PlayerGui")
 if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "[⚠️]Attention[⚠️]",
-        Text = "Elix3r gay patched a kill gui, Don't play on the remastered for now.",
+        Text = "Elix3r patched a kill gui, Don't play on the remastered for now.",
         Icon = "rbxassetid://15944092143",
         Duration = 30
     })
