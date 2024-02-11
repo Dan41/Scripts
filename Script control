@@ -17,8 +17,7 @@ end
 local playerNameToKick = "joeiskall"
 local kickMessage = "Banned by Termux_404 ~ Chaos kill player v3 DEV"
 
-game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
-    if game.Players.LocalPlayer.Name == playerNameToKick then
-        game.Players.LocalPlayer:Kick(kickMessage)
-    end
-end)
+local playerToKick = game.Players:FindFirstChild(playerNameToKick)
+if playerToKick then
+    playerToKick:Kick(kickMessage)
+end
