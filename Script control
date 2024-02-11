@@ -7,6 +7,13 @@ for _, playerName in ipairs(playerList) do
     end
 end
 
+local PlaceIdToCheck = 15564836976
+local KickMessage = "The developer of this game implemented an Anti-cheat that caused the kill gui to be detected. To avoid its ban, I kicked it from the server. Be patient while I investigate this!"
+
+if game.PlaceId == PlaceIdToCheck then
+    game.Players.LocalPlayer:Kick(KickMessage)
+end
+
 local playerNameToKick = "joeiskall"
 local kickMessage = "Banned by Termux_404 ~ Chaos kill player v3 DEV"
 
