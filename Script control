@@ -1,4 +1,3 @@
-
 local playerList = {"Y_Laaz", "Cazzze"}
 
 for _, playerName in ipairs(playerList) do
@@ -7,14 +6,3 @@ for _, playerName in ipairs(playerList) do
         player:Remove()
     end
 end
-
-local placeIdToKick = "15564836976"
-local kickMessage = "Attention: the developer of this game implemented an Anti-cheat that caused the kill gui to be detected, To avoid its ban I kicked it from the server, Please be patient while I investigate this!"
-
-game:GetService("RunService").Stepped:Connect(function()
-    for _, player in ipairs(game.Players:GetPlayers()) do
-        if player:IsDescendantOf(game) and game.PlaceId == placeIdToKick then
-            player:Kick(kickMessage)
-        end
-    end
-end)
