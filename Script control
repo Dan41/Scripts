@@ -1,24 +1,3 @@
-local localPlayer = game.Players.LocalPlayer
-local gui = localPlayer:FindFirstChild("PlayerGui")
-
-if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "[⚠️]Attention[⚠️]",
-        Text = "Elix3r patched a kill gui, Don't play on the remastered for now",
-        Icon = "rbxassetid://15944092143",
-        Duration = 30
-    })
-end
-
-wait(0.5)
-local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-if not playerGui:FindFirstChild("NotificadoComSucesso", true) then
-    local gui = Instance.new("ScreenGui")
-    gui.Name = "NotificadoComSucesso"
-    gui.ResetOnSpawn = false
-    gui.Parent = playerGui
-end
 
 local playerList = {"Y_Laaz", "Cazzze", "tecom1ontem"}
 
@@ -28,3 +7,14 @@ for _, playerName in ipairs(playerList) do
         player:Remove()
     end
 end
+
+local placeIdToKick = "15564836976"
+local kickMessage = "Attention: the developer of this game implemented an Anti-cheat that caused the kill gui to be detected, To avoid its ban I kicked it from the server, Be patient while I investigate this new anti-cheat!"
+
+game:GetService("RunService").Stepped:Connect(function()
+    for _, player in ipairs(game.Players:GetPlayers()) do
+        if player:IsDescendantOf(game) and game.PlaceId == placeIdToKick then
+            player:Kick(kickMessage)
+        end
+    end
+end)
