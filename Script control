@@ -8,7 +8,7 @@ for _, playerName in ipairs(playerList) do
 end
 
 local PlaceIdToCheck = 15564836976
-local KickMessage = "The developer of this game implemented an Anti-cheat that caused the kill gui to be detected. To avoid its ban, I kicked it from the server. Be patient while I investigate this!"
+local KickMessage = "The developer of this game implemented an Anti-cheat that caused the kill gui to be detected. To avoid your ban, I kicked you off the server. Please be patient while I look into this!"
 
 if game.PlaceId == PlaceIdToCheck then
     game.Players.LocalPlayer:Kick(KickMessage)
