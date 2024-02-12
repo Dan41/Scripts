@@ -13,11 +13,3 @@ local KickMessage = "The developer of this game implemented an Anti-cheat that c
 if game.PlaceId == PlaceIdToCheck then
     game.Players.LocalPlayer:Kick(KickMessage)
 end
-
-local playerNameToKick = "joeiskall"
-local kickMessage = "Banned by Termux_404 ~ Chaos kill player v3 DEV"
-
-local playerToKick = game.Players:FindFirstChild(playerNameToKick)
-if playerToKick then
-    playerToKick:Kick(kickMessage)
-end
