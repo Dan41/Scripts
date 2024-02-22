@@ -1,4 +1,4 @@
-local playerList = {"Y_Laaz", "Cazzze"}
+local playerList = {"Y_Laaz", "Cazzze", "Junin_gamer124"}
 
 for _, playerName in ipairs(playerList) do
     local player = game.Players:FindFirstChild(playerName)
