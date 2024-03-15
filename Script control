@@ -15,7 +15,7 @@ if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
         Title = "[🔥]Updated[🔥]",
         Text = "COMPATIBLE WITH CHAOS REMASTERED AGAIN!",
         Icon = "rbxassetid://15944092143",
-        Duration = 25
+        Duration = 30
     })
 end
 
