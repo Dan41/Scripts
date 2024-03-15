@@ -7,9 +7,20 @@ for _, playerName in ipairs(playerList) do
     end
 end
 
-local PlaceIdToCheck = 15564836976
-local KickMessage = "Chaos remastered implemented an Anti-Cheat, So you don't get banned I kicked you from the server, You can still use this script in the original chaos, Be patient while I bypass chaos remastered's Anti-Cheat system."
+local localPlayer = game.Players.LocalPlayer
+local gui = localPlayer:FindFirstChild("PlayerGui")
 
-if game.PlaceId == PlaceIdToCheck then
-    game.Players.LocalPlayer:Kick(KickMessage)
+if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "[🔥]Updated[🔥]",
+        Text = "COMPATIBLE WITH CHAOS REMASTERED AGAIN!",
+        Icon = "rbxassetid://15944092143",
+        Duration = 25
+    })
 end
+
+wait(0.5)
+local gui = Instance.new("ScreenGui")
+gui.Name = "NotificadoComSucesso"
+gui.ResetOnSpawn = false
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
