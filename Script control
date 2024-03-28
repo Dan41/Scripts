@@ -12,8 +12,8 @@ local gui = localPlayer:FindFirstChild("PlayerGui")
 
 if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "👀 Coming soon",
-        Text = "AN AMAZING NEW OPTION IS COMING SOON! ~Termux_404",
+        Title = "⭐ New Function ⭐",
+        Text = "BLACKLIST FUNCTION ADDED!",
         Icon = "rbxassetid://15944092143",
         Duration = 30
     })
