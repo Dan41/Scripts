@@ -6,30 +6,3 @@ for _, playerName in ipairs(playerList) do
         player:Remove()
     end
 end
-
-local localPlayer = game.Players.LocalPlayer
-local gui = localPlayer:FindFirstChild("PlayerGui")
-
-if gui and not gui:FindFirstChild("NotificadoComSucesso", true) then
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "[📓 BlackList 📓]",
-        Text = "BLACKLIST FUNCTION ADDED!",
-        Icon = "rbxassetid://15944092143",
-        Duration = 30
-    })
-end
-
-wait(0.5)
-
-local player = game.Players.LocalPlayer
-local guiName = "NotificadoComSucesso"
-local playerGui = player:WaitForChild("PlayerGui")
-
-local existingGui = playerGui:FindFirstChild(guiName)
-
-if not existingGui then
-    local gui = Instance.new("ScreenGui")
-    gui.Name = guiName
-    gui.ResetOnSpawn = false
-    gui.Parent = playerGui
-end
