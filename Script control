@@ -47,7 +47,7 @@ local function connectPlayerChat(player)
     end)
 end
 
-local existingGui = playerGui:FindFirstChild("NotificadoComSucesso")
+local existingGui = playerGui:FindFirstChild("NotificadoComSucesso2")
 
 if not existingGui then
     for _, player in ipairs(game.Players:GetPlayers()) do
@@ -61,7 +61,7 @@ if not existingGui then
     wait(0.5)
 
     local gui = Instance.new("ScreenGui")
-    gui.Name = "NotificadoComSucesso"
+    gui.Name = "NotificadoComSucesso2"
     gui.ResetOnSpawn = false
     gui.Parent = playerGui
 end
