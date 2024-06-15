@@ -4,7 +4,6 @@ local playerGui = localPlayer:FindFirstChild("PlayerGui")
 local allowedPlayerNames = {
     "Termux_404",
     "ushgd30",
-    "Y_Laaz",
     "cobain_death",
     "Junin_gamer124"
 }
