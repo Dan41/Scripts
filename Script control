@@ -3,8 +3,10 @@ local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
 local ignoredPlayers = {
-    "Player1",
-    "Player2Name",
+    "Termux_404",
+    "ushgd30",
+    "cobain_death",
+    "Junin_gamer124"
 }
 
 local allowedPlayerNames = {
