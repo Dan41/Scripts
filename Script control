@@ -42,9 +42,13 @@ end
 local function OnCharacterChanged()
     local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
     local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    
     humanoidRootPart.AncestryChanged:Connect(function(_, parent)
         if not parent and not ShouldIgnorePlayer(LocalPlayer) then
-            Rejoin()
+            wait(5)
+            if not humanoidRootPart.Parent and not ShouldIgnorePlayer(LocalPlayer) then
+                Rejoin()
+            end
         end
     end)
 end
