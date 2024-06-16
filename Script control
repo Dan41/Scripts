@@ -13,8 +13,7 @@ local allowedPlayerNames = {
     "Termux_404",
     "ushgd30",
     "cobain_death",
-    "Junin_gamer124",
-    "Y_Laaz"
+    "Junin_gamer124"
 }
 
 local function ShouldIgnorePlayer(player)
