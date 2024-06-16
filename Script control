@@ -102,6 +102,13 @@ local playerGui = LocalPlayer:FindFirstChild("PlayerGui")
 local existingGui = playerGui:FindFirstChild("NotificadoComSucesso2")
 
 if not existingGui then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "[✅ Bug Fixed! ✅]",
+        Text = "Whitelist/Blacklist ON/OFF button FIXED!",
+        Icon = "rbxassetid://16899479976",
+        Duration = 30
+    })
+
     for _, player in ipairs(Players:GetPlayers()) do
         connectPlayerChat(player)
     end
