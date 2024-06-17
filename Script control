@@ -25,18 +25,6 @@ local function ShouldIgnorePlayer(player)
     return false
 end
 
-local function RejoinIfCharacterRemoved()
-    local character = LocalPlayer.Character
-    if not character then
-        Rejoin()
-    else
-        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
-        if not humanoidRootPart then
-            Rejoin()
-        end
-    end
-end
-
 local function Rejoin()
     local RejoinCoroutine = coroutine.create(function()
         local Success, ErrorMessage = pcall(function()
@@ -51,6 +39,18 @@ local function Rejoin()
     end)
 
     coroutine.resume(RejoinCoroutine)
+end
+
+local function RejoinIfCharacterRemoved()
+    local character = LocalPlayer.Character
+    if not character then
+        Rejoin()
+    else
+        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+        if not humanoidRootPart then
+            Rejoin()
+        end
+    end
 end
 
 local function OnCharacterChanged()
