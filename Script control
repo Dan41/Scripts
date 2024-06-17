@@ -55,6 +55,8 @@ local function OnCharacterChanged()
     end)
 end
 
+OnCharacterChanged()
+
 if not ShouldIgnorePlayer(LocalPlayer) then
     OnCharacterChanged()
     LocalPlayer.CharacterAdded:Connect(OnCharacterChanged)
