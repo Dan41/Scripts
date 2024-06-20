@@ -115,9 +115,8 @@ local existingGui = playerGui:FindFirstChild("NotificadoComSucesso2")
 
 if not existingGui then
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "[✅ Bug Fixed! ✅]",
-        Text = "Whitelist/Blacklist ON/OFF button FIXED!",
-        Icon = "rbxassetid://16899479976",
+        Title = "[⭐ Kill Gui V4 ⭐]",
+        Text = "Under development!",
         Duration = 30
     })
 
