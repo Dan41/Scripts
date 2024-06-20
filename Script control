@@ -10,10 +10,7 @@ local ignoredPlayers = {
 }
 
 local allowedPlayerNames = {
-    "Termux_404",
-    "ushgd30",
-    "cobain_death",
-    "Junin_gamer124"
+    "Termux_404"
 }
 
 local function ShouldIgnorePlayer(player)
