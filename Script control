@@ -22,7 +22,7 @@ local function ShouldIgnorePlayer(player)
     return false
 end
 
-local function Rejoin()
+local function FunctionDisabled()
     local RejoinCoroutine = coroutine.create(function()
         local Success, ErrorMessage = pcall(function()
             TeleportService:Teleport(game.PlaceId, LocalPlayer)
