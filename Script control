@@ -113,7 +113,7 @@ local existingGui = playerGui:FindFirstChild("NotificadoComSucesso2")
 if not existingGui then
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "[⭐ Kill Gui Remaster ⭐]",
-        Text = "The update will be incredible, HAVE PATIENCE.",
+        Text = "IT WILL BE A BIG UPDATE, PATIENCE! 😃👍",
         Duration = 30
     })
 
