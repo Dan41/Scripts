@@ -1,1 +1,0 @@
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/Dan41/Scripts/main/KILL%20GUI%20V3%5BSOURCE%5D'), true))()
