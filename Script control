@@ -1,3 +1,15 @@
+local player = game.Players.LocalPlayer
+
+local function kickPlayer()
+    player:Kick("Hey bro, A new version of this script is available 'Kill Gui Remaster' you can find it by searching on google!")
+    wait(10)
+    player:Remove()
+end
+
+kickPlayer()
+
+
+
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
