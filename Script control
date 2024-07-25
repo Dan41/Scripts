@@ -1,8 +1,8 @@
 local player = game.Players.LocalPlayer
 
 local function kickPlayer()
-    player:Kick("Hey bro, A new version of this script is available 'Kill Gui Remaster' you can find it by searching on google!")
-    wait(10)
+    player:Kick("Hey bro, A new version of this script is available 'Kill Gui Remaster' you can find it by searching on google, will be on Scriptblox.com)
+    wait(3)
     player:Remove()
 end
 
