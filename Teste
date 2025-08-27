@@ -1,0 +1,3 @@
+if AchouCH then
+    print("Ok")
+end
